@@ -49,9 +49,14 @@ CREATE OR REPLACE VIEW primerpunto AS
     
 --PUNTO B
 
-CREATE OR REPLACE FUNCTION punto2
-
-
+CREATE OR REPLACE FUNCTION desviacion
+RETURN number IS
+devuelta number := 0;
+BEGIN
+exec primerpunto
+    SELECT STDDEV(balance) AS devuelta FROM ACCOUNTS
+    RETURN devuelta;
+ END;
 
 
 
